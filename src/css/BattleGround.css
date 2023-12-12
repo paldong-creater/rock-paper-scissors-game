@@ -1,0 +1,274 @@
+#battle-ground-container {
+  width: 1000px;
+  min-height: 410px;
+  margin: auto;
+}
+
+#battle-ground-header-desktop {
+  margin: 3.75em auto 0 auto;
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  animation-name: show;
+  animation-duration: 2s;
+}
+
+#battle-ground-header-mobile {
+  display: none;
+}
+
+#placeholder {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: rgb(23, 34, 64);
+  animation-name: show;
+  animation-duration: 2s;
+}
+
+#battle-ground-main {
+  margin: 3em auto 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  animation-name: show;
+  animation-duration: 2s;
+}
+
+#select-paper {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%)) border-box;
+  border-radius: 50%;
+  border: 30px solid transparent;
+  box-shadow: 0px 30px 0px -20px rgba(0, 0, 0, 0.45) inset,
+    0px 10px hsl(230, 89%, 62%);
+  z-index: 100;
+  animation-name: show;
+  animation-duration: 2s;
+}
+
+#select-scissors {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%)) border-box;
+  border-radius: 50%;
+  border: 30px solid transparent;
+  box-shadow: 0px 30px 0px -20px rgba(0, 0, 0, 0.45) inset,
+    0px 10px hsl(39, 89%, 49%);
+  z-index: 100;
+  animation-name: show;
+  animation-duration: 2s;
+}
+
+#select-rock {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%)) border-box;
+  border-radius: 50%;
+  border: 30px solid transparent;
+  box-shadow: 0px 30px 0px -20px rgba(0, 0, 0, 0.45) inset,
+    0px 10px hsl(349, 71%, 52%);
+  z-index: 100;
+  animation-name: show;
+  animation-duration: 2s;
+}
+
+#select-paper img {
+  position: absolute;
+  width: 40%;
+  top: 30%;
+  left: 30%;
+  animation-name: show;
+  animation-duration: 2s;
+}
+
+#select-scissors img {
+  position: absolute;
+  width: 40%;
+  top: 30%;
+  left: 30%;
+  animation-name: show;
+  animation-duration: 2s;
+}
+
+#select-rock img {
+  position: absolute;
+  width: 40%;
+  top: 30%;
+  left: 30%;
+  animation-name: show;
+  animation-duration: 2s;
+}
+
+#result-mobile {
+  display: none;
+}
+
+#result-desktop h1 {
+  font-size: 3rem;
+  color: white;
+  text-align: center;
+  animation-name: show;
+  animation-duration: 3s;
+}
+
+#btn-play {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  animation-name: show;
+  animation-duration: 2s;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* different steps tried to make winner effects with gradient background */
+/* .winner-user {
+  background-image: url("../images/winner-bg.png");
+  background-repeat: no-repeat;
+  background-size: 300px 300px;
+} 
+ #user {
+  position: relative;
+}
+#winner {
+  z-index: -1;
+  position: absolute;
+  top: -32%;
+  left: -33%;
+} */
+
+@media (max-width: 1024px) {
+  #battle-ground-container {
+    width: 800px;
+  }
+  #select-paper {
+    width: 250px;
+    height: 250px;
+  }
+  #select-scissors {
+    width: 250px;
+    height: 250px;
+    border: 20px solid transparent;
+  }
+  #select-rock {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border: 20px solid transparent;
+  }
+}
+
+@media (max-width: 768px) {
+  #battle-ground-container {
+    width: 600px;
+  }
+  #select-paper {
+    width: 200px;
+    height: 200px;
+    border: 20px solid transparent;
+  }
+  #select-scissors {
+    width: 200px;
+    height: 200px;
+    border: 20px solid transparent;
+  }
+  #select-rock {
+    width: 200px;
+    height: 200px;
+    border: 20px solid transparent;
+  }
+  #result-desktop h1 {
+    font-size: 2rem;
+  }
+  #btn-play {
+    width: 150px;
+  }
+}
+
+@media (max-width: 500px) {
+  #battle-ground-container {
+    width: 400px;
+    height: 600px;
+    display: grid;
+    align-items: stretch;
+  }
+  #battle-ground-header-desktop {
+    display: none;
+  }
+  #battle-ground-header-mobile {
+    display: flex;
+    justify-content: space-around;
+    width: 400px;
+    margin: 1.75em auto 0 auto;
+    color: white;
+    animation-name: show;
+    animation-duration: 2s;
+  }
+  #battle-ground-header-mobile h2 {
+    font-size: 1.2em;
+  }
+  #battle-ground-main {
+    width: 400px;
+    margin: 5em auto 0 auto;
+    justify-content: space-between;
+  }
+  #select-paper {
+    width: 170px;
+    height: 170px;
+    border: 15px solid transparent;
+    box-shadow: 0px 25px 0px -20px rgba(0, 0, 0, 0.45) inset,
+      0px 5px hsl(230, 89%, 62%);
+  }
+  #select-scissors {
+    width: 170px;
+    height: 170px;
+    border: 15px solid transparent;
+    box-shadow: 0px 25px 0px -20px rgba(0, 0, 0, 0.45) inset,
+      0px 5px hsl(39, 89%, 49%);
+  }
+  #select-rock {
+    width: 170px;
+    height: 170px;
+    border: 15px solid transparent;
+    box-shadow: 0px 25px 0px -20px rgba(0, 0, 0, 0.45) inset,
+      0px 5px hsl(349, 71%, 52%);
+  }
+  #placeholder {
+    width: 170px;
+    height: 170px;
+  }
+  #result-desktop {
+    display: none;
+  }
+  #result-mobile {
+    display: block;
+    color: white;
+    text-align: center;
+    animation-name: show;
+    animation-duration: 3s;
+  }
+  #result-mobile h1 {
+    font-size: 3rem;
+  }
+  #btn-play {
+    width: 220px;
+    font-size: 1.2rem;
+  }
+}
