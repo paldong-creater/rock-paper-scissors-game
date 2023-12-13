@@ -1,55 +1,52 @@
 import { useState, useEffect } from "react";
 import "../css/BattleGround.css";
-import bgImage from "../images/winner-bg.png";
+// import bgImage from "../images/winner-bg.png";
 
-const BattleGround = ({ userChoice, handleBattleOff, getScore }) => {
+const BattleGround = ({
+  userChoice,
+  computerChoice,
+  handleBattleOff,
+  getScore,
+}) => {
   const [computerState, setComputerState] = useState(false);
-  const [computerChoice, setComputerChoice] = useState("close");
   const userIcon = require(`../images/icon-${userChoice}.svg`);
   const computerIcon = require(`../images/icon-${computerChoice}.svg`);
   const [holdResult, setResult] = useState("");
 
   const getResult = () => {
-    if ((userChoice == "rock") & (computerChoice == "scissors")) {
+    if ((userChoice === "rock") & (computerChoice === "scissors")) {
       return "YOU WON";
-    } else if ((userChoice == "rock") & (computerChoice == "paper")) {
+    } else if ((userChoice === "rock") & (computerChoice === "paper")) {
       return "YOU LOST";
-    } else if ((userChoice == "rock") & (computerChoice == "rock")) {
+    } else if ((userChoice === "rock") & (computerChoice === "rock")) {
       return "DRAW";
-    } else if ((userChoice == "paper") & (computerChoice == "rock")) {
+    } else if ((userChoice === "paper") & (computerChoice === "rock")) {
       return "YOU WON";
-    } else if ((userChoice == "paper") & (computerChoice == "scissors")) {
+    } else if ((userChoice === "paper") & (computerChoice === "scissors")) {
       return "YOU LOST";
-    } else if ((userChoice == "paper") & (computerChoice == "paper")) {
+    } else if ((userChoice === "paper") & (computerChoice === "paper")) {
       return "DRAW";
-    } else if ((userChoice == "scissors") & (computerChoice == "paper")) {
+    } else if ((userChoice === "scissors") & (computerChoice === "paper")) {
       return "YOU WON";
-    } else if ((userChoice == "scissors") & (computerChoice == "rock")) {
+    } else if ((userChoice === "scissors") & (computerChoice === "rock")) {
       return "YOU LOST";
-    } else if ((userChoice == "scissors") & (computerChoice == "scissors")) {
+    } else if ((userChoice === "scissors") & (computerChoice === "scissors")) {
       return "DRAW";
     } else {
       return "DRAW";
     }
   };
+
+  // // useEffect(() => {
+  // //   setResult(getResult);
+  // //   console.log('hi')
+  // // }, [computerChoice]);
 
   const getComputerChoice = () => {
     setComputerState(true);
-    setResult("");
-    const randomNum = Math.floor(1 + Math.random() * 3);
-
-    if (randomNum == 1) {
-      setComputerChoice("paper");
-    } else if (randomNum == 2) {
-      setComputerChoice("scissors");
-    } else {
-      setComputerChoice("rock");
-    }
+    setResult(getResult);
   };
 
-  useEffect(() => {
-    setResult(getResult);
-  }, [computerChoice]);
   useEffect(() => {
     getScore(holdResult);
   }, [holdResult]);
@@ -65,7 +62,7 @@ const BattleGround = ({ userChoice, handleBattleOff, getScore }) => {
         <div id="user">
           {/* <img  id="winner" src={bgImage} /> */}
           <div id={`select-${userChoice}`}>
-            <img src={userIcon} />
+            <img src={userIcon} alt="" />
           </div>
         </div>
 
@@ -81,7 +78,7 @@ const BattleGround = ({ userChoice, handleBattleOff, getScore }) => {
         {computerState ? (
           <div id="computer">
             <div id={`select-${computerChoice}`}>
-              <img src={computerIcon} />
+              <img src={computerIcon} alt="" />
             </div>
           </div>
         ) : (

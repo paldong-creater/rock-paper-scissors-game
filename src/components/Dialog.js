@@ -9,10 +9,10 @@ function Footer({ closeClick }) {
       <dialog className="dialog" styles={{ position: "absolute" }} open>
         <header id="dialog-header">
           <h2>RULES</h2>
-          <img id="close-icon-desktop" src={closeIcon} onClick={closeClick} />
+          <img id="close-icon-desktop" src={closeIcon} onClick={closeClick} alt=""/>
         </header>
-        <img id="rules-image" src={rulesImage} />
-        <img id="close-icon-mobile" src={closeIcon} onClick={closeClick} />
+        <img id="rules-image" src={rulesImage} alt=""/>
+        <img id="close-icon-mobile" src={closeIcon} onClick={closeClick} alt=""/>
       </dialog>
     </div>
   );
