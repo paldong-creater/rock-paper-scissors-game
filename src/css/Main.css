@@ -100,20 +100,27 @@
 }
 
 @media (max-width: 500px) {
+  #main-container {
+    justify-content: center;
+    width: 350px;
+    background-size: 20em 20em;
+    margin-bottom: 2em;
+  }
+
   #paper {
-    width: 170px;
+    width: 150px;
     border: 15px solid transparent;
     box-shadow: 0px 25px 0px -20px rgba(0, 0, 0, 0.45) inset,
       0px 5px hsl(230, 89%, 62%);
   }
   #scissors {
-    width: 170px;
+    width: 150px;
     border: 15px solid transparent;
     box-shadow: 0px 25px 0px -20px rgba(0, 0, 0, 0.45) inset,
       0px 5px hsl(39, 89%, 49%);
   }
   #rock {
-    width: 170px;
+    width: 150px;
     border: 15px solid transparent;
     box-shadow: 0px 25px 0px -20px rgba(0, 0, 0, 0.45) inset,
       0px 5px hsl(349, 71%, 52%);
@@ -123,8 +130,10 @@
 @media (max-width: 375px) {
   #main-container {
     width: 350px;
-    background-size: 17em 16em;
-    background-position: 40px 180px;
+    background-size: 17em 13em;
+    background-position: 37px 145px;
+    justify-items: center;
+    align-content: space-evenly;
   }
   #paper {
     width: 120px;

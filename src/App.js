@@ -20,26 +20,24 @@ function App() {
     setRules(false);
   };
 
-
   const handleBattleOn = (id) => {
     setBattleGround("on");
     setUserChoice(id);
     const randomNum = Math.floor(1 + Math.random() * 3);
-      if (randomNum === 1) {
-        setComputerChoice("paper");
-      } else if (randomNum === 2) {
-        setComputerChoice("scissors");
-      } else {
-        setComputerChoice("rock");
-      }
+    if (randomNum === 1) {
+      setComputerChoice("paper");
+    } else if (randomNum === 2) {
+      setComputerChoice("scissors");
+    } else {
+      setComputerChoice("rock");
+    }
   };
-
 
   const handleBattleOff = () => {
     setBattleGround("off");
   };
 
- // function to update score
+  // function to update score
   const getScore = (condition) => {
     if (condition === "YOU WON") {
       setScore(function (prevScore) {
@@ -55,7 +53,6 @@ function App() {
       });
     }
   };
-
 
   // different steps tried to make winner effects with gradient background
 
@@ -78,7 +75,7 @@ function App() {
   // } else {
   //   winnerCircle = "";
   // }
-  
+
   // id={winnerCircle=="user"?"winner-user":winnerCircle=="computer"?"winner-computer":""}
 
   return (
@@ -87,7 +84,8 @@ function App() {
       {rules && <Dialog closeClick={closeClick} />}
       {battleGround === "on" ? (
         <BattleGround
-          userChoice={userChoice} computerChoice={computerChoice}
+          userChoice={userChoice}
+          computerChoice={computerChoice}
           handleBattleOff={handleBattleOff}
           getScore={getScore}
         />

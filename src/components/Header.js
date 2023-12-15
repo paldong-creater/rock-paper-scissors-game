@@ -1,15 +1,15 @@
-import "../css/Header.css"
+import "../css/Header.css";
 import logo from "../images/logo.svg";
-function Header({score}){
+function Header({ score }) {
   return (
     <div id="header-container">
-      <img src={logo} alt=""/>
+      <img src={logo} alt="" />
       <div id="score-container">
         <h3>SCORE</h3>
         <span id="score">{score}</span>
       </div>
     </div>
-  )
+  );
 }
 
-export default Header
+export default Header;

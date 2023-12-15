@@ -39,8 +39,6 @@ const BattleGround = ({
   //   }
   // };
 
-
-
   if ((userChoice === "rock") & (computerChoice === "scissors")) {
     finalResult = "YOU WON";
   } else if ((userChoice === "rock") & (computerChoice === "paper")) {
@@ -62,17 +60,15 @@ const BattleGround = ({
   } else {
     finalResult = "DRAW";
   }
-  console.log(userChoice,computerChoice)
-  console.log(finalResult)
 
   // useEffect(() => {
   //   setResult(getResult);
   //   console.log('hi')
   // }, [getResult]);
-  
+
   const getComputerChoice = () => {
     setComputerState(true);
-    getScore(finalResult)
+    getScore(finalResult);
   };
 
   // useEffect(() => {

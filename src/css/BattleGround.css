@@ -204,8 +204,8 @@
 
 @media (max-width: 500px) {
   #battle-ground-container {
-    width: 400px;
-    height: 600px;
+    width: 350px;
+    height: 500px;
     display: grid;
     align-items: stretch;
   }
@@ -215,7 +215,7 @@
   #battle-ground-header-mobile {
     display: flex;
     justify-content: space-around;
-    width: 400px;
+    width: 350px;
     margin: 1.75em auto 0 auto;
     color: white;
     animation-name: show;
@@ -225,34 +225,34 @@
     font-size: 1.2em;
   }
   #battle-ground-main {
-    width: 400px;
+    width: 350px;
     margin: 5em auto 0 auto;
     justify-content: space-between;
   }
   #select-paper {
-    width: 170px;
-    height: 170px;
+    width: 150px;
+    height: 150px;
     border: 15px solid transparent;
     box-shadow: 0px 25px 0px -20px rgba(0, 0, 0, 0.45) inset,
       0px 5px hsl(230, 89%, 62%);
   }
   #select-scissors {
-    width: 170px;
-    height: 170px;
+    width: 150px;
+    height: 150px;
     border: 15px solid transparent;
     box-shadow: 0px 25px 0px -20px rgba(0, 0, 0, 0.45) inset,
       0px 5px hsl(39, 89%, 49%);
   }
   #select-rock {
-    width: 170px;
-    height: 170px;
+    width: 150px;
+    height: 150px;
     border: 15px solid transparent;
     box-shadow: 0px 25px 0px -20px rgba(0, 0, 0, 0.45) inset,
       0px 5px hsl(349, 71%, 52%);
   }
   #placeholder {
-    width: 170px;
-    height: 170px;
+    width: 150px;
+    height: 150px;
   }
   #result-desktop {
     display: none;
