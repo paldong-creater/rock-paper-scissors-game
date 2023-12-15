@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "../css/BattleGround.css";
 // import bgImage from "../images/winner-bg.png";
 
@@ -11,45 +11,73 @@ const BattleGround = ({
   const [computerState, setComputerState] = useState(false);
   const userIcon = require(`../images/icon-${userChoice}.svg`);
   const computerIcon = require(`../images/icon-${computerChoice}.svg`);
-  const [holdResult, setResult] = useState("");
+  // const [holdResult, setResult] = useState("");
 
-  const getResult = () => {
-    if ((userChoice === "rock") & (computerChoice === "scissors")) {
-      return "YOU WON";
-    } else if ((userChoice === "rock") & (computerChoice === "paper")) {
-      return "YOU LOST";
-    } else if ((userChoice === "rock") & (computerChoice === "rock")) {
-      return "DRAW";
-    } else if ((userChoice === "paper") & (computerChoice === "rock")) {
-      return "YOU WON";
-    } else if ((userChoice === "paper") & (computerChoice === "scissors")) {
-      return "YOU LOST";
-    } else if ((userChoice === "paper") & (computerChoice === "paper")) {
-      return "DRAW";
-    } else if ((userChoice === "scissors") & (computerChoice === "paper")) {
-      return "YOU WON";
-    } else if ((userChoice === "scissors") & (computerChoice === "rock")) {
-      return "YOU LOST";
-    } else if ((userChoice === "scissors") & (computerChoice === "scissors")) {
-      return "DRAW";
-    } else {
-      return "DRAW";
-    }
-  };
+  let finalResult;
 
-  // // useEffect(() => {
-  // //   setResult(getResult);
-  // //   console.log('hi')
-  // // }, [computerChoice]);
+  // const getResult = () => {
+  //   if ((userChoice === "rock") & (computerChoice === "scissors")) {
+  //     return "YOU WON";
+  //   } else if ((userChoice === "rock") & (computerChoice === "paper")) {
+  //     return "YOU LOST";
+  //   } else if ((userChoice === "rock") & (computerChoice === "rock")) {
+  //     return "DRAW";
+  //   } else if ((userChoice === "paper") & (computerChoice === "rock")) {
+  //     return "YOU WON";
+  //   } else if ((userChoice === "paper") & (computerChoice === "scissors")) {
+  //     return "YOU LOST";
+  //   } else if ((userChoice === "paper") & (computerChoice === "paper")) {
+  //     return "DRAW";
+  //   } else if ((userChoice === "scissors") & (computerChoice === "paper")) {
+  //     return "YOU WON";
+  //   } else if ((userChoice === "scissors") & (computerChoice === "rock")) {
+  //     return "YOU LOST";
+  //   } else if ((userChoice === "scissors") & (computerChoice === "scissors")) {
+  //     return "DRAW";
+  //   } else {
+  //     return "DRAW";
+  //   }
+  // };
 
+
+
+  if ((userChoice === "rock") & (computerChoice === "scissors")) {
+    finalResult = "YOU WON";
+  } else if ((userChoice === "rock") & (computerChoice === "paper")) {
+    finalResult = "YOU LOST";
+  } else if ((userChoice === "rock") & (computerChoice === "rock")) {
+    finalResult = "DRAW";
+  } else if ((userChoice === "paper") & (computerChoice === "rock")) {
+    finalResult = "YOU WON";
+  } else if ((userChoice === "paper") & (computerChoice === "scissors")) {
+    finalResult = "YOU LOST";
+  } else if ((userChoice === "paper") & (computerChoice === "paper")) {
+    finalResult = "DRAW";
+  } else if ((userChoice === "scissors") & (computerChoice === "paper")) {
+    finalResult = "YOU WON";
+  } else if ((userChoice === "scissors") & (computerChoice === "rock")) {
+    finalResult = "YOU LOST";
+  } else if ((userChoice === "scissors") & (computerChoice === "scissors")) {
+    finalResult = "DRAW";
+  } else {
+    finalResult = "DRAW";
+  }
+  console.log(userChoice,computerChoice)
+  console.log(finalResult)
+
+  // useEffect(() => {
+  //   setResult(getResult);
+  //   console.log('hi')
+  // }, [getResult]);
+  
   const getComputerChoice = () => {
     setComputerState(true);
-    setResult(getResult);
+    getScore(finalResult)
   };
 
-  useEffect(() => {
-    getScore(holdResult);
-  }, [holdResult]);
+  // useEffect(() => {
+  //   getScore(holdResult);
+  // }, [holdResult]);
 
   return (
     <div id="battle-ground-container">
@@ -68,7 +96,7 @@ const BattleGround = ({
 
         {computerState && (
           <div id="result-desktop">
-            <h1>{holdResult}</h1>
+            <h1>{finalResult}</h1>
             <button id="btn-play" onClick={handleBattleOff}>
               PLAY AGAIN
             </button>
@@ -93,7 +121,7 @@ const BattleGround = ({
 
       {computerState && (
         <div id="result-mobile">
-          <h1>{holdResult}</h1>
+          <h1>{finalResult}</h1>
           <button id="btn-play" onClick={handleBattleOff}>
             PLAY AGAIN
           </button>

@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 import Dialog from "./components/Dialog";
 import BattleGround from "./components/BattleGround";
 
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 function App() {
   const [rules, setRules] = useState(false);
   const [battleGround, setBattleGround] = useState("off");
@@ -20,10 +20,10 @@ function App() {
     setRules(false);
   };
 
+
   const handleBattleOn = (id) => {
     setBattleGround("on");
     setUserChoice(id);
-
     const randomNum = Math.floor(1 + Math.random() * 3);
       if (randomNum === 1) {
         setComputerChoice("paper");
@@ -34,11 +34,12 @@ function App() {
       }
   };
 
+
   const handleBattleOff = () => {
     setBattleGround("off");
   };
 
-  // function to update score
+ // function to update score
   const getScore = (condition) => {
     if (condition === "YOU WON") {
       setScore(function (prevScore) {
@@ -54,6 +55,7 @@ function App() {
       });
     }
   };
+
 
   // different steps tried to make winner effects with gradient background
 
